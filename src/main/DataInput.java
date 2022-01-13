@@ -19,6 +19,7 @@ public class DataInput {
      * @param santaBuilder
      */
     public void setData(final Santa santaBuilder) {
+        final Double ten = 10.0;
         Double sumAverage = 0.0;
         Double budgetUnit = 0.0;
         Double budget = 0.0;
@@ -43,8 +44,8 @@ public class DataInput {
         for (Child child : santaBuilder.getChildList()) {
             score = child.getAverageScore();
             score += score * child.getNiceScoreBonus() / hundred;
-            if (score > 10) {
-                score = 10;
+            if (score > ten) {
+                score = ten;
             }
             sumAverage += score;
 

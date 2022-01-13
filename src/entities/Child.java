@@ -15,6 +15,7 @@ public final class Child {
     private LinkedList<Gift> receivedGifts;
     private Double niceScoreBonus;
     private String elf;
+    private Double niceScoreCity;
 
     public Child() {
 
@@ -33,6 +34,7 @@ public final class Child {
         private LinkedList<Gift> receivedGifts;
         private Double niceScoreBonus;
         private String elf;
+        private Double niceScoreCity;
 
         public ChildBuilder(final int id, final String lastName,
                             final String firstName, final int age,
@@ -81,6 +83,15 @@ public final class Child {
         }
 
         /**
+         * @param niceScoreCity
+         * @return
+         */
+        public ChildBuilder niceScoreCity(final Double niceScoreCity) {
+            this.niceScoreCity = niceScoreCity;
+            return this;
+        }
+
+        /**
          * @return
          */
         public Child build() {
@@ -101,6 +112,7 @@ public final class Child {
         this.receivedGifts = childBuilder.receivedGifts;
         this.niceScoreBonus = childBuilder.niceScoreBonus;
         this.elf = childBuilder.elf;
+        this.niceScoreCity = childBuilder.niceScoreCity;
     }
 
     public int getId() {
@@ -177,5 +189,13 @@ public final class Child {
 
     public void setElf(final String elf) {
         this.elf = elf;
+    }
+
+    public Double getNiceScoreCity() {
+        return niceScoreCity;
+    }
+
+    public void setNiceScoreCity(final Double niceScoreCity) {
+        this.niceScoreCity = niceScoreCity;
     }
 }

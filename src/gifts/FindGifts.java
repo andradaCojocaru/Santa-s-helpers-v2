@@ -3,8 +3,13 @@ package gifts;
 import entities.Child;
 import entities.Gift;
 import entities.Santa;
+import sort.SortId;
+import sort.SortStrategy;
+import sort.SortStrategyFactory;
 
+import java.util.Comparator;
 import java.util.LinkedList;
+import java.util.stream.Collectors;
 
 public class FindGifts {
     public FindGifts() {
@@ -44,10 +49,21 @@ public class FindGifts {
                     default:
                         throw new IllegalArgumentException("Type of gift not found ");
                 }
+                SortStrategyFactory sortStrategyFactory = SortStrategyFactory.getInstance();
+                SortStrategy sortStrategy = sortStrategyFactory.createStrategy(santaBuilder.getChildList(), santaBuilder);
+                sortStrategy.implementSort();
+                santaBuilder.getChildList().stream()
+                        .sorted(Comparator.comparingDouble(Child::getId))
+                        .collect(Collectors.toList());
+
                 // get the cheapest gift, which is the first one if exists
                 if (!giftType.isEmpty()) {
+                    int i = 0;
                     Gift selectedGift = giftType.get(0);
-                    if (selectedGift.getPrice() <= leftBudget) {
+                    while (selectedGift.getQuantity() == 0 && i < giftType.size()) {
+                        selectedGift = giftType.get(i);
+                    }
+                    if (selectedGift.getPrice() <= leftBudget && i != giftType.size()) {
                         if (child.getReceivedGifts() == null) {
                             LinkedList<Gift> receivedGifts = new LinkedList<>();
                             child.setReceivedGifts(receivedGifts);

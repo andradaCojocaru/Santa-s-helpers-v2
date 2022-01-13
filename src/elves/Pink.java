@@ -1,7 +1,7 @@
 package elves;
 
-public class Black  {
-    public Black() {
+public class Pink {
+    public Pink() {
 
     }
 
@@ -9,10 +9,10 @@ public class Black  {
      * @param budget
      * @return
      */
-    public Double blackChanges(final Double budget) {
+    public Double pinkChanges(final Double budget) {
         final Double thirty = 30.0;
         final Double hundred = 100.0;
-        return budget - budget * thirty / hundred;
+        return budget + budget * thirty / hundred;
     }
 
 }

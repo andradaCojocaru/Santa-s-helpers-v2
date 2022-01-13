@@ -58,6 +58,7 @@ public final class Utils {
                                 .doubleValue(),
                         (String)
                                 ((JSONObject) jsonChild).get(Constants.ELF))
+                                .niceScoreCity(0.0)
                         .build());
             }
         }
