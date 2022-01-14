@@ -24,8 +24,10 @@ public class ChangesOverYears {
      * @param anualChanges
      * @param i
      */
-    public void changesImplementation(final Santa santaBuilder, final GiftsArrays giftsArrays,
-                                      final List<AnualChanges> anualChanges, final int i) {
+    public GiftsArrays changesImplementation(final Santa santaBuilder,
+                                             final GiftsArrays giftsArrays,
+                                             final List<AnualChanges> anualChanges,
+                                             final int i) {
         // increase children year
         IncreaseAge increaseAge = new IncreaseAge();
         increaseAge.applyIncreaseAge(santaBuilder);
@@ -35,7 +37,8 @@ public class ChangesOverYears {
         newSantaBudget.putNewSantaBudget(santaBuilder, change.getNewSantaBudget());
         // update gifts
         NewGifts newGifts = new NewGifts();
-        newGifts.putGifts(santaBuilder, change.getNewGifts(), giftsArrays);
+        GiftsArrays newGiftArray = giftsArrays;
+        newGiftArray = newGifts.putGifts(santaBuilder, change.getNewGifts(), giftsArrays);
         NewChildren newChildren = new NewChildren();
         // update children
         newChildren.addNewChildren(santaBuilder, change.getNewChildren());
@@ -44,5 +47,6 @@ public class ChangesOverYears {
         update = change.getChildrenUpdate();
         newChildrenUpdates.makeNewChildrenUpdates(santaBuilder, update);
         santaBuilder.setStrategy(change.getStrategy());
+        return newGiftArray;
     }
 }

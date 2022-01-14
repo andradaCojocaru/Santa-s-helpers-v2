@@ -62,7 +62,7 @@ public class FindGifts {
             }
 
             if (child.getElf().equals("yellow")) {
-                if (child.getReceivedGifts() == null) {
+                if (child.getReceivedGifts() == null || child.getReceivedGifts().isEmpty()) {
                     List<Gift> receivedGifts = new LinkedList<>();
                     child.setReceivedGifts(receivedGifts);
                     String type = child.getGiftsPreferences().get(0);

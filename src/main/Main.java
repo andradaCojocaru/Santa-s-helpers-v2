@@ -90,7 +90,7 @@ public final class Main {
             for (int i = 0; i < santaBuilder.getNumberOfYears(); i++) {
 
                 ChangesOverYears changesOverYears = new ChangesOverYears();
-                changesOverYears.changesImplementation(santaBuilder,
+                giftsArrays = changesOverYears.changesImplementation(santaBuilder,
                         giftsArrays, anualChanges, i);
                 dataInput.setData(santaBuilder);
                 findGifts.findGiftsChildren(santaBuilder, giftsArrays);

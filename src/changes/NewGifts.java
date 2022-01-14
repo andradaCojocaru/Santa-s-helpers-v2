@@ -29,7 +29,7 @@ public class NewGifts {
         sortGifts.mySort(gifts.getBooks());
         sortGifts.mySort(gifts.getClothes());
         sortGifts.mySort(gifts.getSweets());
-        sortGifts.mySort(gifts.getSweets());
+        sortGifts.mySort(gifts.getTechnology());
         sortGifts.mySort(gifts.getToys());
         return gifts;
     }
