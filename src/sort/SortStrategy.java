@@ -2,8 +2,12 @@ package sort;
 
 import entities.Child;
 
-import java.util.LinkedList;
+import java.util.List;
 
 public interface SortStrategy {
-    void implementSort();
+    /**
+     *
+     * @return
+     */
+    List<Child> implementSort();
 }

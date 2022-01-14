@@ -1,6 +1,6 @@
 package result;
 
-import java.util.LinkedList;
+import java.util.List;
 
 public class ChildResult {
     private int id;
@@ -8,11 +8,11 @@ public class ChildResult {
     private String firstName;
     private String city;
     private int age;
-    private LinkedList<String> giftsPreferences;
+    private List<String> giftsPreferences;
     private Double averageScore;
-    private LinkedList<Double> niceScoreHistory;
+    private List<Double> niceScoreHistory;
     private Double assignedBudget;
-    private LinkedList<GiftResult> receivedGifts;
+    private List<GiftResult> receivedGifts;
 
     public ChildResult() {
 
@@ -24,18 +24,18 @@ public class ChildResult {
         private String firstName;
         private String city;
         private int age;
-        private LinkedList<String> giftsPreferences;
+        private List<String> giftsPreferences;
         private Double averageScore;
-        private LinkedList<Double> niceScoreHistory;
+        private List<Double> niceScoreHistory;
         private Double assignedBudget;
-        private LinkedList<GiftResult> receivedGifts;
+        private List<GiftResult> receivedGifts;
 
         public ChildResultBuilder(final int id, final String lastName,
                                   final String firstName, final int age,
                                   final String city,
                                   final Double averageScore,
-                                  final LinkedList<String> giftsPreferences,
-                                  final LinkedList<GiftResult> receivedGifts) {
+                                  final List<String> giftsPreferences,
+                                  final List<GiftResult> receivedGifts) {
             this.id = id;
             this.firstName = firstName;
             this.lastName = lastName;
@@ -51,7 +51,7 @@ public class ChildResult {
          * @param niceScoreHistory
          * @return
          */
-        public ChildResultBuilder niceScoreHistory(final LinkedList<Double> niceScoreHistory) {
+        public ChildResultBuilder niceScoreHistory(final List<Double> niceScoreHistory) {
             this.niceScoreHistory = niceScoreHistory;
             return this;
         }
@@ -69,7 +69,7 @@ public class ChildResult {
          * @param receivedGifts
          * @return
          */
-        public ChildResultBuilder receivedGifts(final LinkedList<GiftResult> receivedGifts) {
+        public ChildResultBuilder receivedGifts(final List<GiftResult> receivedGifts) {
             this.receivedGifts = receivedGifts;
             return this;
         }
@@ -133,7 +133,7 @@ public class ChildResult {
     /**
      * @return
      */
-    public LinkedList<String> getGiftsPreferences() {
+    public List<String> getGiftsPreferences() {
         return giftsPreferences;
     }
 
@@ -147,7 +147,7 @@ public class ChildResult {
     /**
      * @return
      */
-    public LinkedList<Double> getNiceScoreHistory() {
+    public List<Double> getNiceScoreHistory() {
         return niceScoreHistory;
     }
 
@@ -161,7 +161,7 @@ public class ChildResult {
     /**
      * @return
      */
-    public LinkedList<GiftResult> getReceivedGifts() {
+    public List<GiftResult> getReceivedGifts() {
         return receivedGifts;
     }
 }

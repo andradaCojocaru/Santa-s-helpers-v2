@@ -1,18 +1,18 @@
 package result;
 
-import java.util.LinkedList;
+import java.util.List;
 public final class AnnualChildren {
-    private LinkedList<ChildResult> children;
+    private List<ChildResult> children;
 
-    public AnnualChildren(final LinkedList<ChildResult> annualChildren) {
+    public AnnualChildren(final List<ChildResult> annualChildren) {
             this.children = annualChildren;
     }
 
-    public LinkedList<ChildResult> getChildren() {
+    public List<ChildResult> getChildren() {
         return children;
     }
 
-    public void setChildren(final LinkedList<ChildResult> annualChildren) {
+    public void setChildren(final List<ChildResult> annualChildren) {
         this.children = annualChildren;
     }
 

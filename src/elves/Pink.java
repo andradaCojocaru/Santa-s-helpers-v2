@@ -12,7 +12,8 @@ public class Pink {
     public Double pinkChanges(final Double budget) {
         final Double thirty = 30.0;
         final Double hundred = 100.0;
-        return budget + budget * thirty / hundred;
+        final Double newBudget = budget + budget * thirty / hundred;
+        return newBudget;
     }
 
 }

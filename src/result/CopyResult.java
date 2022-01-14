@@ -5,6 +5,7 @@ import entities.Gift;
 import entities.Santa;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class CopyResult {
     public CopyResult() {
@@ -15,17 +16,17 @@ public class CopyResult {
      * @param santa
      * @return
      */
-    public LinkedList<ChildResult> copyConstructor(final Santa santa) {
-        LinkedList<Child> children = santa.getChildList();
-        LinkedList<ChildResult> newChildren = new LinkedList<>();
+    public List<ChildResult> copyConstructor(final Santa santa) {
+        List<Child> children = santa.getChildList();
+        List<ChildResult> newChildren = new LinkedList<>();
 
         for (Child child : children) {
-            LinkedList<Double> niceScoreHistory = child.getNiceScoreHistory();
-            LinkedList<Double> newNiceScoreHistory = new LinkedList<>();
-            LinkedList<String> giftPreferences = child.getGiftsPreferences();
-            LinkedList<String> newGiftPreferences = new LinkedList<>();
-            LinkedList<Gift> receivedGifts = child.getReceivedGifts();
-            LinkedList<GiftResult> newReceivedGifts = new LinkedList<>();
+            List<Double> niceScoreHistory = child.getNiceScoreHistory();
+            List<Double> newNiceScoreHistory = new LinkedList<>();
+            List<String> giftPreferences = child.getGiftsPreferences();
+            List<String> newGiftPreferences = new LinkedList<>();
+            List<Gift> receivedGifts = child.getReceivedGifts();
+            List<GiftResult> newReceivedGifts = new LinkedList<>();
             Double assignedBudget = child.getAssignedBudget();
             int age = child.getAge();
             if (receivedGifts != null) {

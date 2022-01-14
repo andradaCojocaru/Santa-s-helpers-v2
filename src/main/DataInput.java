@@ -6,9 +6,9 @@ import elves.Black;
 import elves.Pink;
 import entities.Child;
 import entities.Santa;
-import enums.ElvesType;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class DataInput {
     public DataInput() {
@@ -27,7 +27,7 @@ public class DataInput {
         double score = 0.0;
         final Double aboveAverage = 11.0;
         for (Child child : santaBuilder.getChildList()) {
-            LinkedList<Double> niceScore = new LinkedList<>();
+            List<Double> niceScore = new LinkedList<>();
             niceScore.add(child.getAverageScore());
             if (child.getNiceScoreHistory() == null) {
                 child.setNiceScoreHistory(niceScore);
@@ -47,6 +47,7 @@ public class DataInput {
             if (score > ten) {
                 score = ten;
             }
+            child.setAverageScore(score);
             sumAverage += score;
 
         }
@@ -56,14 +57,16 @@ public class DataInput {
         }
         for (Child child : santaBuilder.getChildList()) {
             budget = budgetUnit * child.getAverageScore();
-            if (child.getElf().equals(ElvesType.BLACK)) {
+            child.setAssignedBudget(budgetUnit * child.getAverageScore());
+            if (child.getElf().equals("black")) {
                 Black black = new Black();
                 budget = black.blackChanges(budget);
-            } else if (child.getElf().equals(ElvesType.PINK)) {
+                child.setAssignedBudget(budget);
+            } else if (child.getElf().equals("pink")) {
                 Pink pink = new Pink();
                 budget = pink.pinkChanges(budget);
+                child.setAssignedBudget(budget);
             }
-            child.setAssignedBudget(budgetUnit * child.getAverageScore());
         }
 
     }

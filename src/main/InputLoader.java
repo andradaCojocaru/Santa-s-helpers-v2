@@ -14,6 +14,7 @@ import org.json.simple.parser.JSONParser;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.LinkedList;
+import java.util.List;
 
 public class InputLoader {
     private final String inputPath;
@@ -34,9 +35,9 @@ public class InputLoader {
      */
     public Input readData() {
         JSONParser jsonParser = new JSONParser();
-        LinkedList<AnualChanges> anualChanges = new LinkedList<>();
-        LinkedList<Child> children = new LinkedList<>();
-        LinkedList<Gift> giftList = new LinkedList<>();
+        List<AnualChanges> anualChanges = new LinkedList<>();
+        List<Child> children = new LinkedList<>();
+        List<Gift> giftList = new LinkedList<>();
         int jsonNumberOfYears = 0;
         Double jsonSantaBudget = null;
 

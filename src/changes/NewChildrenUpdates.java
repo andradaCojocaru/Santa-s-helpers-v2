@@ -4,6 +4,7 @@ import entities.Child;
 import entities.Santa;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class NewChildrenUpdates {
     public NewChildrenUpdates() {
@@ -15,15 +16,15 @@ public class NewChildrenUpdates {
      * @param childrenUpdates
      */
     public void makeNewChildrenUpdates(final Santa santa,
-                                       final LinkedList<ChildrenUpdate> childrenUpdates) {
+                                       final List<ChildrenUpdate> childrenUpdates) {
         for (ChildrenUpdate childrenUpdate : childrenUpdates) {
-            LinkedList<Child> children = santa.getChildList();
+            List<Child> children = santa.getChildList();
             Child found = new Child();
             Double score = 0.0;
             final Double aboveScore = 11.0;
             int id = childrenUpdate.getId();
-            LinkedList<String> giftPreferences = new LinkedList<>();
-            LinkedList<String> oldPreferences = new LinkedList<>();
+            List<String> giftPreferences = new LinkedList<>();
+            List<String> oldPreferences = new LinkedList<>();
             String preference;
             for (Child child : children) {
                 if (child.getId() == id) {
@@ -31,12 +32,14 @@ public class NewChildrenUpdates {
                     break;
                 }
             }
+            String typeElf = childrenUpdate.getElf();
+            found.setElf(typeElf);
             // put score in array
             score = childrenUpdate.getNiceScore();
             if (Double.compare(score, aboveScore) != 0) {
-                LinkedList<Double> niceScore = found.getNiceScoreHistory();
+                List<Double> niceScore = found.getNiceScoreHistory();
                 if (niceScore == null) {
-                    niceScore = new LinkedList<Double>();
+                    niceScore = new LinkedList<>();
                 }
                 niceScore.add(score);
             }
@@ -51,7 +54,7 @@ public class NewChildrenUpdates {
                             oldPreferences.remove(preference);
                         }
                     } else {
-                        oldPreferences = new LinkedList<String>();
+                        oldPreferences = new LinkedList<>();
                     }
                     oldPreferences.add(0, preference);
                 }

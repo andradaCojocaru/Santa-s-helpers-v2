@@ -4,6 +4,7 @@ import entities.Gift;
 import entities.Santa;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class SetGifts {
     public SetGifts() {
@@ -16,12 +17,12 @@ public class SetGifts {
     public GiftsArrays setGiftsInArray(final Santa santaBuilder) {
         GiftPutInCategories giftPutInCategories =
                 new GiftPutInCategories(santaBuilder.getGiftList());
-        LinkedList<Gift> boardGames = new LinkedList<>();
-        LinkedList<Gift> books = new LinkedList<>();
-        LinkedList<Gift> clothes = new LinkedList<>();
-        LinkedList<Gift> sweets = new LinkedList<>();
-        LinkedList<Gift> technology = new LinkedList<>();
-        LinkedList<Gift> toys = new LinkedList<>();
+        List<Gift> boardGames = new LinkedList<>();
+        List<Gift> books = new LinkedList<>();
+        List<Gift> clothes = new LinkedList<>();
+        List<Gift> sweets = new LinkedList<>();
+        List<Gift> technology = new LinkedList<>();
+        List<Gift> toys = new LinkedList<>();
         GiftsArrays giftsArrays =
                 new GiftsArrays(boardGames, books, clothes, sweets, technology, toys);
         giftPutInCategories.giftSortType(giftsArrays);

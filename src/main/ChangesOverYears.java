@@ -11,6 +11,7 @@ import entities.Santa;
 import gifts.GiftsArrays;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class ChangesOverYears {
     public ChangesOverYears() {
@@ -24,7 +25,7 @@ public class ChangesOverYears {
      * @param i
      */
     public void changesImplementation(final Santa santaBuilder, final GiftsArrays giftsArrays,
-                                      final LinkedList<AnualChanges> anualChanges, final int i) {
+                                      final List<AnualChanges> anualChanges, final int i) {
         // increase children year
         IncreaseAge increaseAge = new IncreaseAge();
         increaseAge.applyIncreaseAge(santaBuilder);
@@ -39,7 +40,7 @@ public class ChangesOverYears {
         // update children
         newChildren.addNewChildren(santaBuilder, change.getNewChildren());
         NewChildrenUpdates newChildrenUpdates = new NewChildrenUpdates();
-        LinkedList<ChildrenUpdate> update = new LinkedList<>();
+        List<ChildrenUpdate> update = new LinkedList<>();
         update = change.getChildrenUpdate();
         newChildrenUpdates.makeNewChildrenUpdates(santaBuilder, update);
         santaBuilder.setStrategy(change.getStrategy());

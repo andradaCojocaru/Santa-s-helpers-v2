@@ -1,10 +1,10 @@
 package average;
 
-import java.util.LinkedList;
+import java.util.List;
 
 public class TeenGetAverageStrategy implements GetAverageStrategy {
-    private LinkedList<Double> historyScore;
-    public TeenGetAverageStrategy(final LinkedList<Double> historyScore) {
+    private List<Double> historyScore;
+    public TeenGetAverageStrategy(final List<Double> historyScore) {
         this.historyScore = historyScore;
     }
 

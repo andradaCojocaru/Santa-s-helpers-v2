@@ -1,6 +1,6 @@
 package entities;
 
-import java.util.LinkedList;
+import java.util.List;
 
 public final class Child {
     private int id;
@@ -8,11 +8,11 @@ public final class Child {
     private String firstName;
     private String city;
     private int age;
-    private LinkedList<String> giftsPreferences;
+    private List<String> giftsPreferences;
     private Double averageScore;
-    private LinkedList<Double> niceScoreHistory;
+    private List<Double> niceScoreHistory;
     private Double assignedBudget;
-    private LinkedList<Gift> receivedGifts;
+    private List<Gift> receivedGifts;
     private Double niceScoreBonus;
     private String elf;
     private Double niceScoreCity;
@@ -27,11 +27,11 @@ public final class Child {
         private String firstName;
         private String city;
         private int age;
-        private LinkedList<String> giftsPreferences;
+        private List<String> giftsPreferences;
         private Double averageScore;
-        private LinkedList<Double> niceScoreHistory;
+        private List<Double> niceScoreHistory;
         private Double assignedBudget;
-        private LinkedList<Gift> receivedGifts;
+        private List<Gift> receivedGifts;
         private Double niceScoreBonus;
         private String elf;
         private Double niceScoreCity;
@@ -40,7 +40,7 @@ public final class Child {
                             final String firstName, final int age,
                             final String city,
                             final Double averageScore,
-                            final LinkedList<String> giftsPreferences,
+                            final List<String> giftsPreferences,
                             final Double niceScoreBonus,
                             final String elf) {
             this.id = id;
@@ -59,7 +59,7 @@ public final class Child {
          * @param niceScoreHistory
          * @return
          */
-        public ChildBuilder niceScoreHistory(final LinkedList<Double> niceScoreHistory) {
+        public ChildBuilder niceScoreHistory(final List<Double> niceScoreHistory) {
             this.niceScoreHistory = niceScoreHistory;
             return this;
         }
@@ -77,7 +77,7 @@ public final class Child {
          * @param receivedGifts
          * @return
          */
-        public ChildBuilder receivedGifts(final LinkedList<Gift> receivedGifts) {
+        public ChildBuilder receivedGifts(final List<Gift> receivedGifts) {
             this.receivedGifts = receivedGifts;
             return this;
         }
@@ -135,7 +135,7 @@ public final class Child {
         return age;
     }
 
-    public LinkedList<String> getGiftsPreferences() {
+    public List<String> getGiftsPreferences() {
         return giftsPreferences;
     }
 
@@ -143,7 +143,7 @@ public final class Child {
         return averageScore;
     }
 
-    public LinkedList<Double> getNiceScoreHistory() {
+    public List<Double> getNiceScoreHistory() {
         return niceScoreHistory;
     }
 
@@ -151,7 +151,7 @@ public final class Child {
         return assignedBudget;
     }
 
-    public LinkedList<Gift> getReceivedGifts() {
+    public List<Gift> getReceivedGifts() {
         return receivedGifts;
     }
 
@@ -163,7 +163,7 @@ public final class Child {
         this.niceScoreBonus = niceScoreBonus;
     }
 
-    public void setNiceScoreHistory(final LinkedList<Double> niceScoreHistory) {
+    public void setNiceScoreHistory(final List<Double> niceScoreHistory) {
         this.niceScoreHistory = niceScoreHistory;
     }
 
@@ -175,7 +175,7 @@ public final class Child {
         this.assignedBudget = assignedBudget;
     }
 
-    public void setReceivedGifts(final LinkedList<Gift> receivedGifts) {
+    public void setReceivedGifts(final List<Gift> receivedGifts) {
         this.receivedGifts = receivedGifts;
     }
 

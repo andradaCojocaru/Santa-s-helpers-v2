@@ -2,7 +2,7 @@ package sort;
 
 import entities.Child;
 
-import java.util.LinkedList;
+import java.util.List;
 
 public class PutNiceScoreCity {
     public PutNiceScoreCity() {
@@ -14,7 +14,7 @@ public class PutNiceScoreCity {
      * @param average
      * @param city
      */
-    public void putNiceScoreOneCity(final LinkedList<Child> children,
+    public void putNiceScoreOneCity(final List<Child> children,
                                     final Double average, final String city) {
         for (Child child : children) {
             if (child.getCity().equals(city)) {

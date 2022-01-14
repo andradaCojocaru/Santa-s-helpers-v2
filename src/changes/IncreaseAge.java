@@ -3,7 +3,7 @@ package changes;
 import entities.Child;
 import entities.Santa;
 
-import java.util.LinkedList;
+import java.util.List;
 
 public class IncreaseAge {
     public IncreaseAge() {
@@ -14,7 +14,7 @@ public class IncreaseAge {
      * @param santa
      */
     public void applyIncreaseAge(final Santa santa) {
-        LinkedList<Child> children = santa.getChildList();
+        List<Child> children = santa.getChildList();
         for (Child child : children) {
             child.setAge(child.getAge() + 1);
         }

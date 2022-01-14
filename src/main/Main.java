@@ -22,6 +22,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -68,7 +69,7 @@ public final class Main {
             final Double aboveAverage = 11.0;
 
             Santa santaBuilder = input.getSanta();
-            LinkedList<AnualChanges> anualChanges = input.getAnualChanges();
+            List<AnualChanges> anualChanges = input.getAnualChanges();
             DataInput dataInput = new DataInput();
             dataInput.setData(santaBuilder);
             SetGifts setGifts = new SetGifts();
@@ -76,7 +77,7 @@ public final class Main {
 
             FindGifts findGifts = new FindGifts();
             findGifts.findGiftsChildren(santaBuilder, giftsArrays);
-            LinkedList<AnnualChildren> listAnnualChildren = new LinkedList<>();
+            List<AnnualChildren> listAnnualChildren = new LinkedList<>();
             CopyResult copySanta = new CopyResult();
             AnnualChildren annualChildren =
                     new AnnualChildren(copySanta.copyConstructor(santaBuilder));

@@ -2,11 +2,11 @@ package gifts;
 
 import entities.Gift;
 
-import java.util.LinkedList;
+import java.util.List;
 
 public class GiftPutInCategories {
-    private LinkedList<Gift> gifts;
-    public GiftPutInCategories(final LinkedList<Gift> gifts) {
+    private List<Gift> gifts;
+    public GiftPutInCategories(final List<Gift> gifts) {
         this.gifts = gifts;
     }
 

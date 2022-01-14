@@ -6,7 +6,7 @@ import gifts.GiftPutInCategories;
 import gifts.GiftsArrays;
 import gifts.SortGifts;
 
-import java.util.LinkedList;
+import java.util.List;
 
 public class NewGifts {
     public NewGifts() {
@@ -19,7 +19,7 @@ public class NewGifts {
      * @param gifts
      * @return
      */
-    public GiftsArrays putGifts(final Santa santa, final LinkedList<Gift> newGift,
+    public GiftsArrays putGifts(final Santa santa, final List<Gift> newGift,
                                  final GiftsArrays gifts) {
         GiftPutInCategories giftPutInCategories = new GiftPutInCategories(newGift);
         giftPutInCategories.giftSortType(gifts);

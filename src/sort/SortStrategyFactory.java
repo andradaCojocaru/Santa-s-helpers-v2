@@ -2,16 +2,18 @@ package sort;
 
 import entities.Child;
 import entities.Santa;
-import enums.Cities;
-import enums.CityStrategyEnum;
 
-import java.util.LinkedList;
+import java.util.List;
 
 public final class SortStrategyFactory {
     private static SortStrategyFactory instance = null;
     private SortStrategyFactory() {
 
     }
+
+    /**
+     * @return
+     */
     public static SortStrategyFactory getInstance() {
         if (instance == null) {
             instance = new SortStrategyFactory();
@@ -19,7 +21,12 @@ public final class SortStrategyFactory {
         return instance;
     }
 
-    public SortStrategy createStrategy(LinkedList<Child> children, Santa santa) {
+    /**
+     * @param children
+     * @param santa
+     * @return
+     */
+    public SortStrategy createStrategy(final List<Child> children, final Santa santa) {
         switch (santa.getStrategy()) {
             case "id": return
                     new SortId(children);

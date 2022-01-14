@@ -1,22 +1,26 @@
 package changes;
 
-import java.util.LinkedList;
+import java.util.List;
 
 public final class ChildrenUpdate {
     private int id;
     private Double niceScore;
-    private LinkedList<String> giftPreferences;
+    private List<String> giftPreferences;
+    private String elf;
 
     public static class ChildrenUpdateBuilder {
         private int id;
         private Double niceScore;
-        private LinkedList<String> giftPreferences;
+        private List<String> giftPreferences;
+        private String elf;
 
         public ChildrenUpdateBuilder(final int id, final Double niceScore,
-                                     final LinkedList<String> giftPreferences) {
+                                     final List<String> giftPreferences,
+                                     final String elf) {
             this.id = id;
             this.niceScore = niceScore;
             this.giftPreferences = giftPreferences;
+            this.elf = elf;
         }
 
         /**
@@ -30,6 +34,7 @@ public final class ChildrenUpdate {
         this.id = childrenUpdateBuilder.id;
         this.niceScore = childrenUpdateBuilder.niceScore;
         this.giftPreferences = childrenUpdateBuilder.giftPreferences;
+        this.elf = childrenUpdateBuilder.elf;
     }
 
     public int getId() {
@@ -40,7 +45,11 @@ public final class ChildrenUpdate {
         return niceScore;
     }
 
-    public LinkedList<String> getGiftPreferences() {
+    public List<String> getGiftPreferences() {
         return giftPreferences;
+    }
+
+    public String getElf() {
+        return elf;
     }
 }

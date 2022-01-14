@@ -4,27 +4,36 @@ import entities.Child;
 import enums.Cities;
 
 import java.util.Comparator;
-import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class SortNiceScoreCity implements SortStrategy {
-    LinkedList<Child> children = new LinkedList<>();
-    public SortNiceScoreCity(final LinkedList<Child> children)  {
+    private List<Child> children;
+    public SortNiceScoreCity(final List<Child> children)  {
         this.children = children;
     }
+
+    /**
+     *
+     * @return
+     */
     @Override
-    public void implementSort() {
+    public List<Child> implementSort() {
+        List<Child> childList;
         Double average = 0.0;
         for (Cities city : Cities.values()) {
             GetNiceScoreCity getNiceScoreCity = new GetNiceScoreCity();
-            average = getNiceScoreCity.getOneNiceScoreCity(children, city.name());
+            average = getNiceScoreCity.getOneNiceScoreCity(children, city.getValue());
             PutNiceScoreCity putNiceScoreCity = new PutNiceScoreCity();
-            putNiceScoreCity.putNiceScoreOneCity(children, average, city.name());
+            putNiceScoreCity.putNiceScoreOneCity(children, average, city.getValue());
         }
         Comparator<Child> sortByNiceScoreCity = (p, o) -> Double.compare(
-                p.getNiceScoreCity(), o.getNiceScoreCity());
+                o.getNiceScoreCity(), p.getNiceScoreCity());
         Comparator<Child> sortName = (p, o) -> p.getCity().compareTo(o.getCity());
-        children.stream().sorted(
-                sortByNiceScoreCity
-                        .thenComparing(sortName));
+        childList = children.stream()
+                .sorted(sortByNiceScoreCity
+                        .thenComparing(sortName))
+                .collect(Collectors.toList());
+        return childList;
     }
 }

@@ -1,12 +1,12 @@
 package entities;
 
-import java.util.LinkedList;
+import java.util.List;
 
 public final class Santa {
     private int numberOfYears;
     private Double budget;
-    private LinkedList<Gift> giftList;
-    private LinkedList<Child> childList;
+    private List<Gift> giftList;
+    private List<Child> childList;
     private String strategy;
 
     public Santa() {
@@ -16,14 +16,14 @@ public final class Santa {
     public static class SantaBuilder {
         private int numberOfYears;
         private Double budget;
-        private LinkedList<Gift> giftList;
-        private LinkedList<Child> childList;
+        private List<Gift> giftList;
+        private List<Child> childList;
         private String strategy;
 
         public SantaBuilder(final int numberOfYears,
                             final Double budget,
-                            final LinkedList<Gift> giftList,
-                            final LinkedList<Child> childList,
+                            final List<Gift> giftList,
+                            final List<Child> childList,
                             final String strategy) {
             this.numberOfYears = numberOfYears;
             this.budget = budget;
@@ -55,11 +55,11 @@ public final class Santa {
         return budget;
     }
 
-    public LinkedList<Gift> getGiftList() {
+    public List<Gift> getGiftList() {
         return giftList;
     }
 
-    public LinkedList<Child> getChildList() {
+    public List<Child> getChildList() {
         return childList;
     }
 
@@ -73,5 +73,9 @@ public final class Santa {
 
     public void setStrategy(final String strategy) {
         this.strategy = strategy;
+    }
+
+    public void setChildList(final List<Child> childList) {
+        this.childList = childList;
     }
 }

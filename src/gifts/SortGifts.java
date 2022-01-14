@@ -3,7 +3,7 @@ package gifts;
 import entities.Gift;
 
 import java.util.Comparator;
-import java.util.LinkedList;
+import java.util.List;
 
 public class SortGifts {
 
@@ -22,7 +22,7 @@ public class SortGifts {
     /**
      * @param giftType
      */
-    public void mySort(final LinkedList<Gift> giftType) {
+    public void mySort(final List<Gift> giftType) {
         giftType.sort(cmp);
     }
 }

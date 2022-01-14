@@ -49,4 +49,8 @@ public final class Gift {
     public int getQuantity() {
         return quantity;
     }
+
+    public void setQuantity(final int quantity) {
+        this.quantity = quantity;
+    }
 }

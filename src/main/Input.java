@@ -3,15 +3,15 @@ package main;
 import changes.AnualChanges;
 import entities.Santa;
 
-import java.util.LinkedList;
+import java.util.List;
 
 
 public class Input {
     private Santa santa;
-    private LinkedList<AnualChanges> anualChanges;
+    private List<AnualChanges> anualChanges;
 
     public Input(final Santa santa,
-                 final LinkedList<AnualChanges> anualChanges) {
+                 final List<AnualChanges> anualChanges) {
         this.santa = santa;
         this.anualChanges = anualChanges;
     }
@@ -26,7 +26,7 @@ public class Input {
     /**
      * @return
      */
-    public LinkedList<AnualChanges> getAnualChanges() {
+    public List<AnualChanges> getAnualChanges() {
         return anualChanges;
     }
 }

@@ -3,26 +3,26 @@ package changes;
 import entities.Child;
 import entities.Gift;
 
-import java.util.LinkedList;
+import java.util.List;
 
 public final class AnualChanges {
     private Double newSantaBudget;
-    private LinkedList<Gift> newGifts;
-    private LinkedList<Child> newChildren;
-    private LinkedList<ChildrenUpdate> childrenUpdate;
+    private List<Gift> newGifts;
+    private List<Child> newChildren;
+    private List<ChildrenUpdate> childrenUpdate;
     private String strategy;
 
     public static class AnualChangesBuilder {
         private Double newSantaBudget;
-        private LinkedList<Gift> newGifts;
-        private LinkedList<Child> newChildren;
-        private LinkedList<ChildrenUpdate> childrenUpdate;
+        private List<Gift> newGifts;
+        private List<Child> newChildren;
+        private List<ChildrenUpdate> childrenUpdate;
         private String strategy;
 
         public AnualChangesBuilder(final Double newSantaBudget,
-                                   final LinkedList<Gift> newGifts,
-                                   final LinkedList<Child> newChildren,
-                                   final LinkedList<ChildrenUpdate> childrenUpdate,
+                                   final List<Gift> newGifts,
+                                   final List<Child> newChildren,
+                                   final List<ChildrenUpdate> childrenUpdate,
                                    final String strategy) {
             this.newSantaBudget = newSantaBudget;
             this.newGifts = newGifts;
@@ -50,15 +50,15 @@ public final class AnualChanges {
         return newSantaBudget;
     }
 
-    public LinkedList<Gift> getNewGifts() {
+    public List<Gift> getNewGifts() {
         return newGifts;
     }
 
-    public LinkedList<Child> getNewChildren() {
+    public List<Child> getNewChildren() {
         return newChildren;
     }
 
-    public LinkedList<ChildrenUpdate> getChildrenUpdate() {
+    public List<ChildrenUpdate> getChildrenUpdate() {
         return childrenUpdate;
     }
 

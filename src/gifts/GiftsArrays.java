@@ -2,22 +2,22 @@ package gifts;
 
 import entities.Gift;
 
-import java.util.LinkedList;
+import java.util.List;
 
 public class GiftsArrays {
-    private LinkedList<Gift> boardGames;
-    private LinkedList<Gift> books;
-    private LinkedList<Gift> clothes;
-    private LinkedList<Gift> sweets;
-    private LinkedList<Gift> technology;
-    private LinkedList<Gift> toys;
+    private List<Gift> boardGames;
+    private List<Gift> books;
+    private List<Gift> clothes;
+    private List<Gift> sweets;
+    private List<Gift> technology;
+    private List<Gift> toys;
 
-    public GiftsArrays(final LinkedList<Gift> boardGames,
-                       final LinkedList<Gift> books,
-                       final LinkedList<Gift> clothes,
-                       final LinkedList<Gift> sweets,
-                       final LinkedList<Gift> technology,
-                       final LinkedList<Gift> toys) {
+    public GiftsArrays(final List<Gift> boardGames,
+                       final List<Gift> books,
+                       final List<Gift> clothes,
+                       final List<Gift> sweets,
+                       final List<Gift> technology,
+                       final List<Gift> toys) {
         this.boardGames = boardGames;
         this.books = books;
         this.clothes = clothes;
@@ -29,84 +29,84 @@ public class GiftsArrays {
     /**
      * @return
      */
-    public LinkedList<Gift> getBoardGames() {
+    public List<Gift> getBoardGames() {
         return boardGames;
     }
 
     /**
      * @return
      */
-    public LinkedList<Gift> getBooks() {
+    public List<Gift> getBooks() {
         return books;
     }
 
     /**
      * @return
      */
-    public LinkedList<Gift> getClothes() {
+    public List<Gift> getClothes() {
         return clothes;
     }
 
     /**
      * @return
      */
-    public LinkedList<Gift> getSweets() {
+    public List<Gift> getSweets() {
         return sweets;
     }
 
     /**
      * @return
      */
-    public LinkedList<Gift> getTechnology() {
+    public List<Gift> getTechnology() {
         return technology;
     }
 
     /**
      * @return
      */
-    public LinkedList<Gift> getToys() {
+    public List<Gift> getToys() {
         return toys;
     }
 
     /**
      * @param boardGames
      */
-    public void setBoardGames(final LinkedList<Gift> boardGames) {
+    public void setBoardGames(final List<Gift> boardGames) {
         this.boardGames = boardGames;
     }
 
     /**
      * @param books
      */
-    public void setBooks(final LinkedList<Gift> books) {
+    public void setBooks(final List<Gift> books) {
         this.books = books;
     }
 
     /**
      * @param clothes
      */
-    public void setClothes(final LinkedList<Gift> clothes) {
+    public void setClothes(final List<Gift> clothes) {
         this.clothes = clothes;
     }
 
     /**
      * @param sweets
      */
-    public void setSweets(final LinkedList<Gift> sweets) {
+    public void setSweets(final List<Gift> sweets) {
         this.sweets = sweets;
     }
 
     /**
      * @param technology
      */
-    public void setTechnology(final LinkedList<Gift> technology) {
+    public void setTechnology(final List<Gift> technology) {
         this.technology = technology;
     }
 
     /**
      * @param toys
      */
-    public void setToys(final LinkedList<Gift> toys) {
+    public void setToys(final List<Gift> toys) {
         this.toys = toys;
     }
 }

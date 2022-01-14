@@ -9,6 +9,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public final class Utils {
     private Utils() {
@@ -18,9 +19,9 @@ public final class Utils {
      * @param array
      * @return
      */
-    public static LinkedList<String> giftPreferences(final JSONArray array) {
+    public static List<String> giftPreferences(final JSONArray array) {
         if (array != null) {
-            LinkedList<String> finalArray = new LinkedList<>();
+            List<String> finalArray = new LinkedList<>();
             for (Object object : array) {
                 finalArray.add((String) object);
             }
@@ -34,8 +35,8 @@ public final class Utils {
      * @param jsonChildren
      * @return
      */
-    public static LinkedList<Child> jsonNewChildren(final JSONArray jsonChildren) {
-        LinkedList<Child> children = new LinkedList<>();
+    public static List<Child> jsonNewChildren(final JSONArray jsonChildren) {
+        List<Child> children = new LinkedList<>();
         if (jsonChildren != null) {
             for (Object jsonChild : jsonChildren) {
                 children.add(new Child.ChildBuilder(((Long)
@@ -69,8 +70,8 @@ public final class Utils {
      * @param jsonSantaGiftsList
      * @return
      */
-    public static LinkedList<Gift> jsonGifts(final JSONArray jsonSantaGiftsList) {
-        LinkedList<Gift> giftList = new LinkedList<>();
+    public static List<Gift> jsonGifts(final JSONArray jsonSantaGiftsList) {
+        List<Gift> giftList = new LinkedList<>();
         if (jsonSantaGiftsList != null) {
             for (Object santaGift : jsonSantaGiftsList) {
                 giftList.add(new Gift.GiftBuilder((String)
@@ -92,9 +93,9 @@ public final class Utils {
      * @param jsonChildrenUpdates
      * @return
      */
-    public static LinkedList<ChildrenUpdate>
+    public static List<ChildrenUpdate>
     jsonChildrenMakeUpdates(final JSONArray jsonChildrenUpdates) {
-        LinkedList<ChildrenUpdate> children = new LinkedList<>();
+        List<ChildrenUpdate> children = new LinkedList<>();
         Double score = 0.0;
         // put score 11 where niceScore is null
         final Double aboveScore = 11.0;
@@ -112,7 +113,9 @@ public final class Utils {
                         score,
                         Utils.giftPreferences((JSONArray)
                                 ((JSONObject) santaGift)
-                                        .get(Constants.GIFT_PREFERENCES)))
+                                        .get(Constants.GIFT_PREFERENCES)),
+                        (String) ((JSONObject) santaGift)
+                                .get(Constants.ELF))
                         .build());
             }
         }
@@ -123,9 +126,9 @@ public final class Utils {
      * @param jsonAnnualChanges
      * @return
      */
-    public static LinkedList<AnualChanges>
+    public static List<AnualChanges>
     anualChanges(final JSONArray jsonAnnualChanges) {
-        LinkedList<AnualChanges> changes = new LinkedList<>();
+        List<AnualChanges> changes = new LinkedList<>();
         if (jsonAnnualChanges != null) {
             for (Object anualChange : jsonAnnualChanges) {
                 JSONArray jsonNewChild =
